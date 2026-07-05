@@ -1,38 +1,28 @@
 @use "./variables.scss" as *;
 
-// put your custom CSS here!
-/* ==========================================================================
-   STORM KING'S THUNDER / D&D CAMPAIGN THEME
-   ========================================================================== */
-
-/* ---------------------------------------
-   Google Fonts
---------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Text:wght@400;600;700&display=swap');
-
 /* ---------------------------------------
    Color Palette
 --------------------------------------- */
 
 :root {
+  --bg: #111111;
+  --surface: #1a1a1a;
+  --surface-light: #242424;
 
-    --fantasy-parchment: #f6efdc;
-    --fantasy-paper: #fbf6eb;
-    --fantasy-dark-paper: #ede0c4;
+  --text: #ddd6c7;
+  --text-muted: #b2a896;
 
-    --fantasy-brown: #4c3727;
-    --fantasy-dark-brown: #2d2118;
+  --gold: #b89954;
+  --gold-light: #dbc47a;
 
-    --fantasy-gold: #b28a42;
-    --fantasy-light-gold: #d5b977;
+  --bronze: #6d5832;
 
-    --fantasy-red: #8b2c2c;
-    --fantasy-red-light: #bb4b4b;
+  --accent: #7c8b97;
+  --accent-light: #9cb1c2;
 
-    --fantasy-green: #44614a;
+  --border: rgba(184,153,84,.35);
 
-    --fantasy-shadow: rgba(35, 20, 5, .18);
-
+  --shadow: rgba(0,0,0,.55);
 }
 
 /* ---------------------------------------
@@ -62,19 +52,15 @@
 
 body {
 
+    background:
+        radial-gradient(circle at top, rgba(255,255,255,.03), transparent 40%),
+        linear-gradient(#151515,#090909);
+
+    color: var(--text);
+
     font-family: "Crimson Text", serif;
 
-    background:
-        radial-gradient(circle at top, rgba(255,255,255,.25), transparent 60%),
-        linear-gradient(
-            var(--fantasy-paper),
-            var(--fantasy-parchment)
-        );
-
-    color: var(--fantasy-brown);
-
 }
-
 /* ---------------------------------------
    Scrollbar
 --------------------------------------- */
@@ -103,19 +89,20 @@ body {
 
 article {
 
-    background: rgba(255,248,235,.88);
+    background:
+        linear-gradient(
+            rgba(34,34,34,.95),
+            rgba(25,25,25,.97)
+        );
 
-    border: 2px solid var(--fantasy-gold);
+    border: 1px solid var(--border);
 
-    border-radius: 14px;
-
-    padding: 2rem;
+    border-radius: 12px;
 
     box-shadow:
-        0 8px 24px var(--fantasy-shadow);
+        0 0 35px rgba(0,0,0,.55);
 
 }
-
 /* ---------------------------------------
    Sidebars
 --------------------------------------- */
@@ -137,54 +124,16 @@ article {
    Headings
 --------------------------------------- */
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1,h2,h3,h4 {
 
-    font-family: "Cinzel Decorative", serif;
+    font-family:"Cinzel Decorative",serif;
 
-    color: var(--fantasy-red);
+    color:var(--gold);
 
-    letter-spacing: 1px;
+    letter-spacing:2px;
 
-}
-
-h1 {
-
-    font-size: 2.5rem;
-
-    text-align: center;
-
-    border-bottom: 3px solid var(--fantasy-gold);
-
-    margin-bottom: 1rem;
-
-    padding-bottom: .5rem;
-
-}
-
-h1::after {
-
-    content: "❦";
-
-    display: block;
-
-    color: var(--fantasy-gold);
-
-    margin-top: .4rem;
-
-    font-size: 1.4rem;
-
-}
-
-h2 {
-
-    border-bottom: 1px solid var(--fantasy-gold);
-
-    padding-bottom: .25rem;
+    text-shadow:
+        0 0 8px rgba(184,153,84,.2);
 
 }
 
@@ -192,76 +141,75 @@ h2 {
    Links
 --------------------------------------- */
 
-a {
+a{
 
-    color: var(--fantasy-red);
-
-    transition: .2s;
+    color:var(--accent-light);
 
 }
 
-a:hover {
+a:hover{
 
-    color: var(--fantasy-red-light);
+    color:var(--gold-light);
 
-    text-shadow: 0 0 6px rgba(255,210,120,.5);
+    text-shadow:
+        0 0 6px rgba(219,196,122,.35);
 
 }
+/* ---------------------------------------
+   Sidebars
+--------------------------------------- */
 
+.left.sidebar,
+.right.sidebar{
+
+    background:#181818;
+
+    border:1px solid var(--border);
+
+    backdrop-filter:blur(4px);
+
+}
 /* ---------------------------------------
    Search Box
 --------------------------------------- */
 
-input {
+input{
 
-    background: var(--fantasy-paper);
+    background:#222;
 
-    border: 2px solid var(--fantasy-gold);
+    color:var(--text);
 
-    border-radius: 8px;
+    border:1px solid var(--border);
 
 }
-
 /* ---------------------------------------
    Tables
 --------------------------------------- */
 
-table {
+th{
 
-    border-collapse: collapse;
+    background:#2a2a2a;
 
-    width: 100%;
-
-}
-
-th {
-
-    background: var(--fantasy-brown);
-
-    color: white;
+    color:var(--gold);
 
 }
 
-td,
-th {
+td{
 
-    border: 1px solid var(--fantasy-gold);
-
-    padding: .65rem;
+    background:#1c1c1c;
 
 }
-
 /* ---------------------------------------
    Images
 --------------------------------------- */
 
-img {
+img{
 
-    border: 5px solid var(--fantasy-gold);
+    border:2px solid var(--border);
 
-    border-radius: 8px;
-
-    box-shadow: 0 5px 14px rgba(0,0,0,.2);
+    filter:
+        contrast(1.05)
+        saturate(.9);
 
 }
 
@@ -305,82 +253,13 @@ blockquote {
    Callouts
 --------------------------------------- */
 
-.callout {
+.callout{
 
-    border-radius: 10px;
+    background:#1d1d1d;
 
-    border-left: 6px solid var(--fantasy-gold);
-
-    background: rgba(178,138,66,.08);
+    border-left:4px solid var(--gold);
 
 }
-
-.callout[data-callout="note"] {
-
-    border-left-color: #3f78b5;
-
-}
-
-.callout[data-callout="warning"] {
-
-    border-left-color: #b64928;
-
-}
-
-.callout[data-callout="tip"] {
-
-    border-left-color: #3d8d53;
-
-}
-
-.callout[data-callout="important"] {
-
-    border-left-color: var(--fantasy-red);
-
-}
-
-/* Optional RPG Callouts */
-
-.callout[data-callout="npc"] {
-
-    border-left-color: #83562c;
-
-    background: rgba(131,86,44,.12);
-
-}
-
-.callout[data-callout="quest"] {
-
-    border-left-color: #6a2c91;
-
-    background: rgba(106,44,145,.12);
-
-}
-
-.callout[data-callout="treasure"] {
-
-    border-left-color: #c49d22;
-
-    background: rgba(196,157,34,.12);
-
-}
-
-.callout[data-callout="monster"] {
-
-    border-left-color: #8c2323;
-
-    background: rgba(140,35,35,.12);
-
-}
-
-.callout[data-callout="lore"] {
-
-    border-left-color: #255a80;
-
-    background: rgba(37,90,128,.12);
-
-}
-
 /* ---------------------------------------
    Tags
 --------------------------------------- */
@@ -394,7 +273,26 @@ blockquote {
     border-radius: 20px;
 
 }
+.callout[data-callout="npc"]{
 
+    border-left-color:#7b6650;
+
+}
+.callout[data-callout="quest"]{
+
+    border-left-color:#9b8646;
+
+}
+.callout[data-callout="lore"]{
+
+    border-left-color:#75899c;
+
+}
+.callout[data-callout="monster"]{
+
+    border-left-color:#7a4747;
+
+}
 /* ---------------------------------------
    Explorer
 --------------------------------------- */
@@ -417,11 +315,9 @@ blockquote {
    Graph
 --------------------------------------- */
 
-.graph {
+.graph{
 
-    border: 1px solid var(--fantasy-gold);
-
-    border-radius: 12px;
+    background:#181818;
 
 }
 
@@ -453,23 +349,17 @@ hr {
    Buttons
 --------------------------------------- */
 
-button {
+button{
 
-    background: var(--fantasy-red);
+    background:#2d2d2d;
 
-    color: white;
-
-    border: none;
-
-    border-radius: 6px;
-
-    padding: .5rem 1rem;
+    border:1px solid var(--border);
 
 }
 
-button:hover {
+button:hover{
 
-    background: var(--fantasy-red-light);
+    background:#3a3a3a;
 
 }
 
@@ -500,5 +390,42 @@ article {
         transform: translateY(0);
 
     }
+
+}
+
+body::before{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    background:
+        radial-gradient(circle,
+            transparent 45%,
+            rgba(0,0,0,.45) 100%);
+
+    z-index:999;
+
+}
+
+body::after{
+
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    opacity:.035;
+
+    background-image:url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+
+    z-index:998;
 
 }
