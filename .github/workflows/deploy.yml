@@ -1,4 +1,4 @@
-name: Deploy Wrath of the Kaiju Website
+name: Deploy SKT Website
  
 on:
   push:
