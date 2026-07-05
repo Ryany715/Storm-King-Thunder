@@ -1,431 +1,928 @@
 @use "./variables.scss" as *;
 
-/* ---------------------------------------
-   Color Palette
---------------------------------------- */
+/* ==========================================================================
+   STORM KING'S THUNDER — QUARTZ SOURCEBOOK THEME
+   Part 1: Foundation
+   ========================================================================== */
 
+/* Solbera-style fallback stack (safe for Quartz) */
 :root {
-  --bg: #111111;
-  --surface: #1a1a1a;
-  --surface-light: #242424;
-
-  --text: #ddd6c7;
-  --text-muted: #b2a896;
-
-  --gold: #b89954;
-  --gold-light: #dbc47a;
-
-  --bronze: #6d5832;
-
-  --accent: #7c8b97;
-  --accent-light: #9cb1c2;
-
-  --border: rgba(184,153,84,.35);
-
-  --shadow: rgba(0,0,0,.55);
+  --font-header: "Cinzel", serif;
+  --font-body: "Cormorant Garamond", serif;
+  --font-mono: "IBM Plex Mono", monospace;
 }
 
 /* ---------------------------------------
-   Dark Mode Palette
+   Storm King's Thunder Color System
+--------------------------------------- */
+
+:root {
+
+  /* parchment base */
+  --skt-bg: #f3ead7;
+  --skt-paper: #fbf4e6;
+  --skt-ink: #2a221a;
+
+  /* storm & sea palette */
+  --skt-storm: #3f5163;
+  --skt-storm-light: #6f859c;
+
+  /* gold / rune accents */
+  --skt-gold: #b89a52;
+  --skt-gold-soft: #d7c07a;
+
+  /* wood / leather */
+  --skt-leather: #4a3426;
+  --skt-leather-dark: #2b1d14;
+
+  /* danger / giants */
+  --skt-blood: #7a2e2e;
+
+  /* UI */
+  --skt-border: rgba(184, 154, 82, 0.35);
+  --skt-shadow: rgba(0, 0, 0, 0.35);
+
+}
+
+/* ---------------------------------------
+   Dark Mode (candlelit parchment, not pure inversion)
 --------------------------------------- */
 
 [saved-theme="dark"] {
 
-    --fantasy-parchment: #241c18;
-    --fantasy-paper: #2c231d;
-    --fantasy-dark-paper: #3b3028;
+  --skt-bg: #171512;
+  --skt-paper: #1f1c18;
+  --skt-ink: #e7ddcc;
 
-    --fantasy-brown: #e7d9c3;
-    --fantasy-dark-brown: #faf3e7;
+  --skt-storm: #7f93a8;
+  --skt-storm-light: #a8b7c6;
 
-    --fantasy-gold: #c8a55b;
-    --fantasy-light-gold: #e4c979;
+  --skt-gold: #c9ab63;
+  --skt-gold-soft: #e3c980;
 
-    --fantasy-red: #cb725f;
-    --fantasy-red-light: #e69784;
-
+  --skt-border: rgba(201, 171, 99, 0.25);
 }
 
 /* ---------------------------------------
-   Body
+   Global Page Layout (Quartz core)
 --------------------------------------- */
 
 body {
 
-    background:
-        radial-gradient(circle at top, rgba(255,255,255,.03), transparent 40%),
-        linear-gradient(#151515,#090909);
+  font-family: var(--font-body);
 
-    color: var(--text);
+  background:
+    radial-gradient(circle at top, rgba(255,255,255,0.25), transparent 60%),
+    linear-gradient(var(--skt-paper), var(--skt-bg));
 
-    font-family: "Crimson Text", serif;
+  color: var(--skt-ink);
 
-}
-/* ---------------------------------------
-   Scrollbar
---------------------------------------- */
-
-::-webkit-scrollbar {
-    width: 12px;
-}
-
-::-webkit-scrollbar-thumb {
-
-    background: var(--fantasy-gold);
-
-    border-radius: 20px;
+  line-height: 1.5;
 
 }
 
-::-webkit-scrollbar-track {
-
-    background: var(--fantasy-dark-paper);
-
-}
-
-/* ---------------------------------------
-   Main Article
---------------------------------------- */
-
+/* Main article container */
 article {
 
-    background:
-        linear-gradient(
-            rgba(34,34,34,.95),
-            rgba(25,25,25,.97)
-        );
+  background: rgba(255, 248, 235, 0.92);
 
-    border: 1px solid var(--border);
+  border: 1px solid var(--skt-border);
 
-    border-radius: 12px;
+  border-radius: 12px;
 
-    box-shadow:
-        0 0 35px rgba(0,0,0,.55);
+  box-shadow: 0 10px 30px var(--skt-shadow);
+
+  padding: 2rem;
+
+  animation: skt-fade-in 0.35s ease;
 
 }
+
+/* Fade-in like a page turning */
+@keyframes skt-fade-in {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
 /* ---------------------------------------
-   Sidebars
+   Sidebar (Explorer / Graph panels)
 --------------------------------------- */
 
 .left.sidebar,
 .right.sidebar {
 
-    background: rgba(120,90,55,.08);
+  background: rgba(20, 16, 12, 0.85);
 
-    border: 1px solid var(--fantasy-gold);
+  border: 1px solid var(--skt-border);
 
-    border-radius: 12px;
+  border-radius: 10px;
 
-    padding: .75rem;
+  backdrop-filter: blur(6px);
 
-}
-
-/* ---------------------------------------
-   Headings
---------------------------------------- */
-
-h1,h2,h3,h4 {
-
-    font-family:"Cinzel Decorative",serif;
-
-    color:var(--gold);
-
-    letter-spacing:2px;
-
-    text-shadow:
-        0 0 8px rgba(184,153,84,.2);
+  color: var(--skt-ink);
 
 }
 
 /* ---------------------------------------
-   Links
---------------------------------------- */
-
-a{
-
-    color:var(--accent-light);
-
-}
-
-a:hover{
-
-    color:var(--gold-light);
-
-    text-shadow:
-        0 0 6px rgba(219,196,122,.35);
-
-}
-/* ---------------------------------------
-   Sidebars
---------------------------------------- */
-
-.left.sidebar,
-.right.sidebar{
-
-    background:#181818;
-
-    border:1px solid var(--border);
-
-    backdrop-filter:blur(4px);
-
-}
-/* ---------------------------------------
-   Search Box
---------------------------------------- */
-
-input{
-
-    background:#222;
-
-    color:var(--text);
-
-    border:1px solid var(--border);
-
-}
-/* ---------------------------------------
-   Tables
---------------------------------------- */
-
-th{
-
-    background:#2a2a2a;
-
-    color:var(--gold);
-
-}
-
-td{
-
-    background:#1c1c1c;
-
-}
-/* ---------------------------------------
-   Images
---------------------------------------- */
-
-img{
-
-    border:2px solid var(--border);
-
-    filter:
-        contrast(1.05)
-        saturate(.9);
-
-}
-
-/* ---------------------------------------
-   Code Blocks
---------------------------------------- */
-
-pre {
-
-    background: #2a2520;
-
-    border: 2px solid var(--fantasy-gold);
-
-    border-radius: 8px;
-
-}
-
-code {
-
-    font-family: "IBM Plex Mono", monospace;
-
-}
-
-/* ---------------------------------------
-   Blockquotes
---------------------------------------- */
-
-blockquote {
-
-    border-left: 6px solid var(--fantasy-gold);
-
-    background: rgba(178,138,66,.08);
-
-    font-style: italic;
-
-    padding: 1rem;
-
-}
-
-/* ---------------------------------------
-   Callouts
---------------------------------------- */
-
-.callout{
-
-    background:#1d1d1d;
-
-    border-left:4px solid var(--gold);
-
-}
-/* ---------------------------------------
-   Tags
---------------------------------------- */
-
-.tag {
-
-    background: rgba(178,138,66,.18);
-
-    border: 1px solid var(--fantasy-gold);
-
-    border-radius: 20px;
-
-}
-.callout[data-callout="npc"]{
-
-    border-left-color:#7b6650;
-
-}
-.callout[data-callout="quest"]{
-
-    border-left-color:#9b8646;
-
-}
-.callout[data-callout="lore"]{
-
-    border-left-color:#75899c;
-
-}
-.callout[data-callout="monster"]{
-
-    border-left-color:#7a4747;
-
-}
-/* ---------------------------------------
-   Explorer
---------------------------------------- */
-
-.folder-title,
-.explorer a {
-
-    color: var(--fantasy-brown);
-
-}
-
-.folder-title:hover,
-.explorer a:hover {
-
-    color: var(--fantasy-red);
-
-}
-
-/* ---------------------------------------
-   Graph
---------------------------------------- */
-
-.graph{
-
-    background:#181818;
-
-}
-
-/* ---------------------------------------
-   Selection
+   Selection styling
 --------------------------------------- */
 
 ::selection {
+  background: rgba(184, 154, 82, 0.35);
+  color: var(--skt-ink);
+}
 
-    background: rgba(212,181,95,.45);
+/* ---------------------------------------
+   Scrollbar (subtle parchment metal)
+--------------------------------------- */
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--skt-gold);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--skt-bg);
+}
+
+ /* ==========================================================================
+   PART 2 — TYPOGRAPHY & SOURCEBOOK STRUCTURE
+   ========================================================================== */
+
+/* ---------------------------------------
+   Headings (PHB / SKT chapter style)
+--------------------------------------- */
+
+h1, h2, h3, h4, h5 {
+
+  font-family: var(--font-header);
+
+  color: var(--skt-leather);
+
+  letter-spacing: 0.06em;
+
+  text-transform: none;
+
+  text-shadow: 0 0 10px rgba(184,154,82,0.15);
+
+}
+
+/* Chapter Title (H1) */
+h1 {
+
+  font-size: 2.4rem;
+
+  text-align: center;
+
+  padding-bottom: 0.5rem;
+
+  margin-bottom: 1.2rem;
+
+  border-bottom: 2px solid var(--skt-gold);
+
+  position: relative;
+
+}
+
+/* Ornamental divider under H1 */
+h1::after {
+
+  content: "❖";
+
+  display: block;
+
+  margin-top: 0.3rem;
+
+  color: var(--skt-gold);
+
+  font-size: 1.2rem;
+
+}
+
+/* Section headers */
+h2 {
+
+  font-size: 1.7rem;
+
+  border-bottom: 1px solid rgba(184,154,82,0.5);
+
+  padding-bottom: 0.2rem;
+
+}
+
+/* Subsections */
+h3 {
+
+  font-size: 1.3rem;
+
+  color: var(--skt-storm);
 
 }
 
 /* ---------------------------------------
-   Horizontal Rule
+   Paragraph styling (book feel)
+--------------------------------------- */
+
+p {
+
+  margin: 0.6rem 0;
+
+  text-rendering: optimizeLegibility;
+
+}
+
+/* First paragraph after H1 gets “book opening” feel */
+h1 + p {
+
+  font-size: 1.05rem;
+
+}
+
+/* Drop cap effect (PHB-inspired but Quartz-safe) */
+h1 + p::first-letter {
+
+  float: left;
+
+  font-family: var(--font-header);
+
+  font-size: 3.2rem;
+
+  line-height: 0.9;
+
+  margin-right: 0.3rem;
+
+  color: var(--skt-gold);
+
+}
+
+/* ---------------------------------------
+   Links (ancient ink + magical glow)
+--------------------------------------- */
+
+a {
+
+  color: var(--skt-storm);
+
+  text-decoration: none;
+
+  border-bottom: 1px dotted rgba(127,147,168,0.6);
+
+  transition: all 0.2s ease;
+
+}
+
+a:hover {
+
+  color: var(--skt-gold);
+
+  text-shadow: 0 0 6px rgba(215,192,122,0.35);
+
+  border-bottom-color: var(--skt-gold);
+
+}
+
+/* Internal Quartz links */
+.internal {
+
+  color: var(--skt-storm-light);
+
+}
+
+/* ---------------------------------------
+   Horizontal Rules (map divider style)
 --------------------------------------- */
 
 hr {
 
-    border: none;
+  border: none;
 
-    border-top: 2px solid var(--fantasy-gold);
+  height: 1px;
 
-    margin: 2rem 0;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--skt-gold),
+    transparent
+  );
 
-}
-
-/* ---------------------------------------
-   Buttons
---------------------------------------- */
-
-button{
-
-    background:#2d2d2d;
-
-    border:1px solid var(--border);
-
-}
-
-button:hover{
-
-    background:#3a3a3a;
+  margin: 2rem 0;
 
 }
 
 /* ---------------------------------------
-   Subtle Page Animation
+   Blockquotes (lore tablets / ancient records)
 --------------------------------------- */
 
-article {
+blockquote {
 
-    animation: fadeIn .4s ease;
+  border-left: 4px solid var(--skt-gold);
 
-}
+  background: rgba(184,154,82,0.08);
 
-@keyframes fadeIn {
+  padding: 1rem 1.2rem;
 
-    from {
+  font-style: italic;
 
-        opacity: 0;
-
-        transform: translateY(10px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform: translateY(0);
-
-    }
+  border-radius: 6px;
 
 }
 
-body::before{
+/* ---------------------------------------
+   Lists (clean adventurer notes)
+--------------------------------------- */
 
-    content:"";
+ul, ol {
 
-    position:fixed;
-
-    inset:0;
-
-    pointer-events:none;
-
-    background:
-        radial-gradient(circle,
-            transparent 45%,
-            rgba(0,0,0,.45) 100%);
-
-    z-index:999;
+  padding-left: 1.4rem;
 
 }
 
-body::after{
+li {
 
-    content:"";
+  margin: 0.2rem 0;
 
-    position:fixed;
+}
 
-    inset:0;
+/* ---------------------------------------
+   Inline code (arcane script feel)
+--------------------------------------- */
 
-    pointer-events:none;
+code {
 
-    opacity:.035;
+  font-family: var(--font-mono);
 
-    background-image:url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  background: rgba(0,0,0,0.15);
 
-    z-index:998;
+  padding: 0.15rem 0.35rem;
+
+  border-radius: 4px;
+
+  color: var(--skt-blood);
+
+}
+
+/* Code blocks */
+pre {
+
+  background: #1b1714;
+
+  border: 1px solid var(--skt-border);
+
+  border-radius: 8px;
+
+  padding: 1rem;
+
+  overflow-x: auto;
+
+}
+
+/* ==========================================================================
+   PART 3 — QUARTZ NAVIGATION SYSTEM
+   Explorer, Tags, Breadcrumbs, Popovers
+   ========================================================================== */
+
+/* ---------------------------------------
+   Explorer (Campaign Index feel)
+--------------------------------------- */
+
+.explorer {
+
+  background: rgba(20, 16, 12, 0.85);
+
+  border: 1px solid var(--skt-border);
+
+  border-radius: 10px;
+
+  padding: 0.5rem;
+
+}
+
+.folder-title {
+
+  font-family: var(--font-header);
+
+  color: var(--skt-ink);
+
+  letter-spacing: 0.04em;
+
+}
+
+.folder-title:hover {
+
+  color: var(--skt-gold);
+
+}
+
+/* File links in explorer */
+.explorer a {
+
+  color: var(--skt-storm-light);
+
+  border-bottom: none;
+
+  display: block;
+
+  padding: 0.15rem 0;
+
+  transition: all 0.15s ease;
+
+}
+
+.explorer a:hover {
+
+  color: var(--skt-gold);
+
+  transform: translateX(2px);
+
+}
+
+/* ---------------------------------------
+   Breadcrumbs (adventure path)
+--------------------------------------- */
+
+.breadcrumb-container {
+
+  font-family: var(--font-body);
+
+  font-size: 0.9rem;
+
+  color: var(--skt-storm-light);
+
+  margin-bottom: 1rem;
+
+}
+
+.breadcrumb-container a {
+
+  color: var(--skt-storm);
+
+}
+
+.breadcrumb-container a:hover {
+
+  color: var(--skt-gold);
+
+}
+
+/* separators */
+.breadcrumb-container span::after {
+
+  content: "›";
+
+  margin: 0 0.4rem;
+
+  color: var(--skt-gold);
+
+}
+
+/* ---------------------------------------
+   Tags (rune seals / faction markers)
+--------------------------------------- */
+
+.tag {
+
+  display: inline-block;
+
+  font-family: var(--font-header);
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.05em;
+
+  padding: 0.2rem 0.5rem;
+
+  margin: 0.1rem;
+
+  border-radius: 999px;
+
+  background: rgba(184,154,82,0.12);
+
+  border: 1px solid var(--skt-border);
+
+  color: var(--skt-gold);
+
+  text-transform: uppercase;
+
+}
+
+.tag:hover {
+
+  background: rgba(184,154,82,0.25);
+
+  color: var(--skt-gold-soft);
+
+}
+
+/* ---------------------------------------
+   Popovers (lore cards / monster cards)
+--------------------------------------- */
+
+.popover {
+
+  background: var(--skt-paper);
+
+  border: 1px solid var(--skt-border);
+
+  border-radius: 10px;
+
+  box-shadow: 0 12px 30px rgba(0,0,0,0.45);
+
+  padding: 0.8rem;
+
+  font-family: var(--font-body);
+
+}
+
+.popover h1,
+.popover h2,
+.popover h3 {
+
+  font-family: var(--font-header);
+
+  color: var(--skt-leather);
+
+}
+
+/* Links inside popovers */
+.popover a {
+
+  color: var(--skt-storm);
+
+}
+
+/* ---------------------------------------
+   Backlinks (memory echoes)
+--------------------------------------- */
+
+.backlinks {
+
+  border-top: 1px solid var(--skt-border);
+
+  margin-top: 2rem;
+
+  padding-top: 1rem;
+
+}
+
+.backlinks a {
+
+  color: var(--skt-storm-light);
+
+}
+
+.backlinks a:hover {
+
+  color: var(--skt-gold);
+
+}
+
+/* ---------------------------------------
+   TOC (Table of Contents = chapter map)
+--------------------------------------- */
+
+.toc {
+
+  border-left: 2px solid var(--skt-border);
+
+  padding-left: 1rem;
+
+}
+
+.toc a {
+
+  color: var(--skt-storm-light);
+
+}
+
+.toc a:hover {
+
+  color: var(--skt-gold);
+
+}
+
+/* ---------------------------------------
+   Graph View (constellation map style)
+--------------------------------------- */
+
+.graph {
+
+  background: radial-gradient(
+    circle at center,
+    rgba(63,81,99,0.2),
+    rgba(10,10,10,0.9)
+  );
+
+  border: 1px solid var(--skt-border);
+
+}
+
+/* nodes (Quartz graph classes vary slightly by build) */
+.graph-node {
+
+  fill: var(--skt-storm-light);
+
+}
+
+.graph-node:hover {
+
+  fill: var(--skt-gold);
+
+}
+
+/* links between nodes */
+.graph-link {
+
+  stroke: rgba(184,154,82,0.25);
+
+}
+
+/* ==========================================================================
+   PART 4 — CONTENT STYLING + FINAL ATMOSPHERE
+   Tables, Images, Callouts, UI polish, effects
+   ========================================================================== */
+
+/* ---------------------------------------
+   IMAGES (Illustrated book frames)
+--------------------------------------- */
+
+img {
+
+  border: 2px solid var(--skt-border);
+
+  border-radius: 8px;
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+
+  filter: contrast(1.05) saturate(0.95);
+
+}
+
+/* Image captions (Quartz uses figures in some layouts) */
+figcaption {
+
+  font-family: var(--font-body);
+
+  font-size: 0.85rem;
+
+  color: var(--skt-storm-light);
+
+  text-align: center;
+
+}
+
+/* ---------------------------------------
+   TABLES (stat blocks / PHB tables)
+--------------------------------------- */
+
+table {
+
+  width: 100%;
+
+  border-collapse: collapse;
+
+  font-family: var(--font-body);
+
+  font-size: 0.95rem;
+
+  margin: 1rem 0;
+
+  border: 1px solid var(--skt-border);
+
+}
+
+th {
+
+  background: rgba(40, 35, 30, 0.95);
+
+  color: var(--skt-gold);
+
+  font-family: var(--font-header);
+
+  padding: 0.5rem;
+
+  border-bottom: 1px solid var(--skt-border);
+
+}
+
+td {
+
+  padding: 0.5rem;
+
+  border-bottom: 1px solid rgba(184,154,82,0.15);
+
+}
+
+tr:nth-child(even) td {
+
+  background: rgba(0,0,0,0.08);
+
+}
+
+/* ---------------------------------------
+   CALLOUTS (RPG system blocks)
+--------------------------------------- */
+
+.callout {
+
+  border: 1px solid var(--skt-border);
+
+  border-left: 4px solid var(--skt-gold);
+
+  background: rgba(20, 16, 12, 0.75);
+
+  border-radius: 10px;
+
+  padding: 0.8rem 1rem;
+
+  margin: 1rem 0;
+
+}
+
+/* NPC */
+.callout[data-callout="npc"] {
+
+  border-left-color: #7b6650;
+
+}
+
+/* Quest */
+.callout[data-callout="quest"] {
+
+  border-left-color: #9b8646;
+
+}
+
+/* Lore */
+.callout[data-callout="lore"] {
+
+  border-left-color: #75899c;
+
+}
+
+/* Monster */
+.callout[data-callout="monster"] {
+
+  border-left-color: #7a4747;
+
+}
+
+/* Treasure */
+.callout[data-callout="treasure"] {
+
+  border-left-color: var(--skt-gold);
+
+}
+
+/* Location */
+.callout[data-callout="location"] {
+
+  border-left-color: var(--skt-storm);
+
+}
+
+/* ---------------------------------------
+   BUTTONS (minimal fantasy UI)
+--------------------------------------- */
+
+button {
+
+  font-family: var(--font-header);
+
+  background: rgba(40, 35, 30, 0.9);
+
+  color: var(--skt-gold);
+
+  border: 1px solid var(--skt-border);
+
+  border-radius: 6px;
+
+  padding: 0.4rem 0.8rem;
+
+  transition: all 0.15s ease;
+
+}
+
+button:hover {
+
+  background: rgba(60, 55, 50, 0.95);
+
+  color: var(--skt-gold-soft);
+
+}
+
+/* ---------------------------------------
+   HORIZONTAL RULE (map divider / chapter break)
+--------------------------------------- */
+
+hr {
+
+  border: none;
+
+  height: 1px;
+
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--skt-gold),
+    transparent
+  );
+
+  margin: 2.5rem 0;
+
+}
+
+/* ---------------------------------------
+   FINAL ATMOSPHERE LAYER
+   (vignette + subtle grain)
+--------------------------------------- */
+
+/* Vignette (focus reader like a book page) */
+body::before {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  background: radial-gradient(
+    circle at center,
+    transparent 55%,
+    rgba(0,0,0,0.55) 100%
+  );
+
+  z-index: 999;
+
+}
+
+/* Subtle grain texture */
+body::after {
+
+  content: "";
+
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  opacity: 0.04;
+
+  background-image: url("https://www.transparenttextures.com/patterns/dark-fish-skin.png");
+
+  z-index: 998;
+
+}
+
+/* ---------------------------------------
+   MOBILE CLEANUP
+--------------------------------------- */
+
+@media (max-width: 768px) {
+
+  article {
+
+    padding: 1rem;
+
+    border-radius: 8px;
+
+  }
+
+  h1 {
+
+    font-size: 1.8rem;
+
+  }
+
+  .sidebar {
+
+    display: none;
+
+  }
+
+}
+
+/* ---------------------------------------
+   FINAL TOUCH: smooth readability
+--------------------------------------- */
+
+p {
+
+  text-wrap: pretty;
 
 }
