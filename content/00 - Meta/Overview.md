@@ -1,4 +1,3 @@
 
 
-
-![[Savage Frontier Map.png|697]]
+![[00 - Meta/Assets/Savage Frontier Map.png]]
