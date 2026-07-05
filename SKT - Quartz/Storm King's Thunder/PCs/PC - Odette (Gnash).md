@@ -3,13 +3,16 @@ type: character
 name: Odette (formerly Gnash)
 player: EV
 race: Stone Giant
-class: # Unspecified
+class: Soulknife Rogue
 faction:
 location: "[[Goldenfields]]"
 alignment:
 status: Alive
-tags: [pc, backstory]
-aliases: [Gnash]
+tags:
+  - pc
+  - backstory
+aliases:
+  - Gnash
 ---
 # Odette (formerly Gnash)
 

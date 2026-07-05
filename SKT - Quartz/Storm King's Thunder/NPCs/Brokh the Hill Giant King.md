@@ -19,7 +19,7 @@ aliases: []
 *   **Appearance:** An emaciated and sinewy hill giant, standing a few heads taller than the bloated giants around him, with wispy, oily strands of long black hair. Notably lithe and malformed compared to typical hill giants.
 *   **Personality:** Intelligent and calculating beneath his monstrous hunger — unusually sapient for a hill giant, having "broken" into unnatural intellect through years of maddening starvation.
 *   **Mannerisms:** Ritualistically starves himself between feasts, believing it deepens his mind; savors the act of consuming intelligent minds as both nourishment and pleasure.
-![[Pasted image 20260704221446.png]]
+![[Brok.png]]
 ## Background
 Brokh was born a hill giant runt — sickly, rashy, and frail — yet voracious, quickly outgrowing his peers through sheer gluttony. In young adulthood, Annam the All-Father cursed him with an insatiable hunger, seeing in Brokh a potential champion of the hill giants who could rise through the Ordning. When the Ordning shattered, Brokh found he could no longer satiate his hunger no matter how much he consumed. His tribe's shaman saw this as a horrible omen and had him bound and starved in an attempt to cleanse him of the curse. Years of enforced hunger drove Brokh mad — and in that madness, his psyche broke into an unnatural intellect and sapience he'd never possessed before.
 

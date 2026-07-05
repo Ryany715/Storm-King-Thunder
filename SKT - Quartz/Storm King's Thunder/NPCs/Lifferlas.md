@@ -19,7 +19,7 @@ aliases: []
 *   **Appearance:** An awakened treant.
 *   **Personality:** Helpful and community-minded — readily agreed to aid in rebuilding Goldenfields' wall.
 *   **Mannerisms:** [Not yet detailed]
-
+![[Lifferlas.png]]
 ## Background
 Lifferlas is an awakened treant residing in the Emerald Enclave grove near Goldenfields. He was awakened by the druid Aerglas. The party's druid met him while the group awaited the Goldenfields council meeting, and he agreed to help reconstruct the section of the city wall broken by a previous hill giant attack. He also shared word of Aerglas's pilgrimage to Shadowtop Cathedral to consult Turlang, the Enclave's oldest treant.
 

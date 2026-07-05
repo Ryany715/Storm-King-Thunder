@@ -19,7 +19,7 @@ aliases: []
 *   **Appearance:** [Not yet detailed]
 *   **Personality:** Scholarly, engaged, and personable — genuinely enthusiastic upon meeting Snave.
 *   **Mannerisms:** [Not yet detailed]
-
+![[Naxene Drathkala.png]]
 ## Background
 Naxene serves as the Watchful Order of Magists and Protectors' attaché in Goldenfields, researching giant history and the recent attacks on the region. She met Snave and was, to his surprise, already a fan of his reporting work. When the party asked for help securing Waterdeep's aid against Brokh, she agreed, and later personally escorted the party to Waterdeep, insisting they first visit Chazlauth Yarghorn.
 

@@ -19,7 +19,7 @@ aliases: [The Yeti]
 *   **Appearance:** Nicknamed "the Yeti" — physical description not otherwise detailed.
 *   **Personality:** Appreciative and community-minded — called an emergency council meeting upon hearing of the Brokh threat.
 *   **Mannerisms:** [Not yet detailed]
-
+![[Miros Xelbrin.png]]
 ## Background
 Miros owns North Furrow's End, a tavern in Goldenfields, and is a member of the prominent Xelbrin family. The party delivered news to him of the death of a Xelbrin family member (per Morak UrGray's request back in Nightstone). Grateful, Miros rewarded them with a magic ring. Upon learning of Brokh the Hill Giant King's rampage across the Great Plains, he called an emergency meeting of the Goldenfields council.
 

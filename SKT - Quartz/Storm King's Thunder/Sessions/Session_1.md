@@ -16,7 +16,7 @@ tags:
 ## Session Overview
 
 The players arrived in Nightstone as part of a travelling caravan and found the village overrun by goblins and worgs. After fighting through hostiles, they interrogated a captured goblin named Pojo, who revealed the villagers had been taken to the Dripping Caves to the north. They met Kella Darkhope, discovered Lady Velrosa dead in the Nightstone keep, and convinced the town guards to march north to free the captives. Just outside town, they encountered agents of the Zhentarim looking to use Nightstone as a trading outpost, and were then besieged by an orc raiding party called the Ear-Seekers, whom Snave convinced to pursue the "treasure" in the Dripping Caves instead of holing up in town.
-![[Pasted image 20260704221536.png]]
+![[Goblins.png]]
 ## Key Events & Discoveries
 
 ### Scene 1: Nightstone Under Siege
@@ -25,7 +25,7 @@ The players arrived in Nightstone as part of a travelling caravan and found the 
 *   The village of Nightstone was found infested with goblins and worgs; the players fought their way through hostile creatures.
 *   The party tied up and interrogated a goblin named [[Pojo]], who revealed the villagers of Nightstone had been captured and taken to the Dripping Caves to the north of town.
 *   With bribery and coercion, the players convinced Pojo to head to the caves himself and free the villagers.
-![[Pasted image 20260704221551.png]]
+![[NightStone.png]]
 ### Scene 2: Kella Darkhope & the Nightstone Keep
 *   Further into town, the players met a woman who identified herself as [[Kella Darkhope]].
 *   Kella accompanied the players through the rest of the town.

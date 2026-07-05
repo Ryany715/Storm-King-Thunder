@@ -3,12 +3,14 @@ type: character
 name: Solliel
 player: Kylee
 race: Fairy
-class: # Unspecified
+class: Druid
 faction:
 location: "[[Nightstone]]"
 alignment:
 status: Alive
-tags: [pc, backstory]
+tags:
+  - pc
+  - backstory
 aliases: []
 ---
 # Solliel

@@ -2,11 +2,11 @@
 type: character
 name: Snave
 player: Ryan
-race:
-class:
+race: Satry
+class: Bard
 faction:
 location: "[[Nightstone]]"
-alignment:
+alignment: Good/ish?
 status: Alive
 tags:
   - pc
