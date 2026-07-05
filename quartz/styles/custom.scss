@@ -1,3 +1,504 @@
 @use "./variables.scss" as *;
 
 // put your custom CSS here!
+/* ==========================================================================
+   STORM KING'S THUNDER / D&D CAMPAIGN THEME
+   ========================================================================== */
+
+/* ---------------------------------------
+   Google Fonts
+--------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Text:wght@400;600;700&display=swap');
+
+/* ---------------------------------------
+   Color Palette
+--------------------------------------- */
+
+:root {
+
+    --fantasy-parchment: #f6efdc;
+    --fantasy-paper: #fbf6eb;
+    --fantasy-dark-paper: #ede0c4;
+
+    --fantasy-brown: #4c3727;
+    --fantasy-dark-brown: #2d2118;
+
+    --fantasy-gold: #b28a42;
+    --fantasy-light-gold: #d5b977;
+
+    --fantasy-red: #8b2c2c;
+    --fantasy-red-light: #bb4b4b;
+
+    --fantasy-green: #44614a;
+
+    --fantasy-shadow: rgba(35, 20, 5, .18);
+
+}
+
+/* ---------------------------------------
+   Dark Mode Palette
+--------------------------------------- */
+
+[saved-theme="dark"] {
+
+    --fantasy-parchment: #241c18;
+    --fantasy-paper: #2c231d;
+    --fantasy-dark-paper: #3b3028;
+
+    --fantasy-brown: #e7d9c3;
+    --fantasy-dark-brown: #faf3e7;
+
+    --fantasy-gold: #c8a55b;
+    --fantasy-light-gold: #e4c979;
+
+    --fantasy-red: #cb725f;
+    --fantasy-red-light: #e69784;
+
+}
+
+/* ---------------------------------------
+   Body
+--------------------------------------- */
+
+body {
+
+    font-family: "Crimson Text", serif;
+
+    background:
+        radial-gradient(circle at top, rgba(255,255,255,.25), transparent 60%),
+        linear-gradient(
+            var(--fantasy-paper),
+            var(--fantasy-parchment)
+        );
+
+    color: var(--fantasy-brown);
+
+}
+
+/* ---------------------------------------
+   Scrollbar
+--------------------------------------- */
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: var(--fantasy-gold);
+
+    border-radius: 20px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: var(--fantasy-dark-paper);
+
+}
+
+/* ---------------------------------------
+   Main Article
+--------------------------------------- */
+
+article {
+
+    background: rgba(255,248,235,.88);
+
+    border: 2px solid var(--fantasy-gold);
+
+    border-radius: 14px;
+
+    padding: 2rem;
+
+    box-shadow:
+        0 8px 24px var(--fantasy-shadow);
+
+}
+
+/* ---------------------------------------
+   Sidebars
+--------------------------------------- */
+
+.left.sidebar,
+.right.sidebar {
+
+    background: rgba(120,90,55,.08);
+
+    border: 1px solid var(--fantasy-gold);
+
+    border-radius: 12px;
+
+    padding: .75rem;
+
+}
+
+/* ---------------------------------------
+   Headings
+--------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+
+    font-family: "Cinzel Decorative", serif;
+
+    color: var(--fantasy-red);
+
+    letter-spacing: 1px;
+
+}
+
+h1 {
+
+    font-size: 2.5rem;
+
+    text-align: center;
+
+    border-bottom: 3px solid var(--fantasy-gold);
+
+    margin-bottom: 1rem;
+
+    padding-bottom: .5rem;
+
+}
+
+h1::after {
+
+    content: "❦";
+
+    display: block;
+
+    color: var(--fantasy-gold);
+
+    margin-top: .4rem;
+
+    font-size: 1.4rem;
+
+}
+
+h2 {
+
+    border-bottom: 1px solid var(--fantasy-gold);
+
+    padding-bottom: .25rem;
+
+}
+
+/* ---------------------------------------
+   Links
+--------------------------------------- */
+
+a {
+
+    color: var(--fantasy-red);
+
+    transition: .2s;
+
+}
+
+a:hover {
+
+    color: var(--fantasy-red-light);
+
+    text-shadow: 0 0 6px rgba(255,210,120,.5);
+
+}
+
+/* ---------------------------------------
+   Search Box
+--------------------------------------- */
+
+input {
+
+    background: var(--fantasy-paper);
+
+    border: 2px solid var(--fantasy-gold);
+
+    border-radius: 8px;
+
+}
+
+/* ---------------------------------------
+   Tables
+--------------------------------------- */
+
+table {
+
+    border-collapse: collapse;
+
+    width: 100%;
+
+}
+
+th {
+
+    background: var(--fantasy-brown);
+
+    color: white;
+
+}
+
+td,
+th {
+
+    border: 1px solid var(--fantasy-gold);
+
+    padding: .65rem;
+
+}
+
+/* ---------------------------------------
+   Images
+--------------------------------------- */
+
+img {
+
+    border: 5px solid var(--fantasy-gold);
+
+    border-radius: 8px;
+
+    box-shadow: 0 5px 14px rgba(0,0,0,.2);
+
+}
+
+/* ---------------------------------------
+   Code Blocks
+--------------------------------------- */
+
+pre {
+
+    background: #2a2520;
+
+    border: 2px solid var(--fantasy-gold);
+
+    border-radius: 8px;
+
+}
+
+code {
+
+    font-family: "IBM Plex Mono", monospace;
+
+}
+
+/* ---------------------------------------
+   Blockquotes
+--------------------------------------- */
+
+blockquote {
+
+    border-left: 6px solid var(--fantasy-gold);
+
+    background: rgba(178,138,66,.08);
+
+    font-style: italic;
+
+    padding: 1rem;
+
+}
+
+/* ---------------------------------------
+   Callouts
+--------------------------------------- */
+
+.callout {
+
+    border-radius: 10px;
+
+    border-left: 6px solid var(--fantasy-gold);
+
+    background: rgba(178,138,66,.08);
+
+}
+
+.callout[data-callout="note"] {
+
+    border-left-color: #3f78b5;
+
+}
+
+.callout[data-callout="warning"] {
+
+    border-left-color: #b64928;
+
+}
+
+.callout[data-callout="tip"] {
+
+    border-left-color: #3d8d53;
+
+}
+
+.callout[data-callout="important"] {
+
+    border-left-color: var(--fantasy-red);
+
+}
+
+/* Optional RPG Callouts */
+
+.callout[data-callout="npc"] {
+
+    border-left-color: #83562c;
+
+    background: rgba(131,86,44,.12);
+
+}
+
+.callout[data-callout="quest"] {
+
+    border-left-color: #6a2c91;
+
+    background: rgba(106,44,145,.12);
+
+}
+
+.callout[data-callout="treasure"] {
+
+    border-left-color: #c49d22;
+
+    background: rgba(196,157,34,.12);
+
+}
+
+.callout[data-callout="monster"] {
+
+    border-left-color: #8c2323;
+
+    background: rgba(140,35,35,.12);
+
+}
+
+.callout[data-callout="lore"] {
+
+    border-left-color: #255a80;
+
+    background: rgba(37,90,128,.12);
+
+}
+
+/* ---------------------------------------
+   Tags
+--------------------------------------- */
+
+.tag {
+
+    background: rgba(178,138,66,.18);
+
+    border: 1px solid var(--fantasy-gold);
+
+    border-radius: 20px;
+
+}
+
+/* ---------------------------------------
+   Explorer
+--------------------------------------- */
+
+.folder-title,
+.explorer a {
+
+    color: var(--fantasy-brown);
+
+}
+
+.folder-title:hover,
+.explorer a:hover {
+
+    color: var(--fantasy-red);
+
+}
+
+/* ---------------------------------------
+   Graph
+--------------------------------------- */
+
+.graph {
+
+    border: 1px solid var(--fantasy-gold);
+
+    border-radius: 12px;
+
+}
+
+/* ---------------------------------------
+   Selection
+--------------------------------------- */
+
+::selection {
+
+    background: rgba(212,181,95,.45);
+
+}
+
+/* ---------------------------------------
+   Horizontal Rule
+--------------------------------------- */
+
+hr {
+
+    border: none;
+
+    border-top: 2px solid var(--fantasy-gold);
+
+    margin: 2rem 0;
+
+}
+
+/* ---------------------------------------
+   Buttons
+--------------------------------------- */
+
+button {
+
+    background: var(--fantasy-red);
+
+    color: white;
+
+    border: none;
+
+    border-radius: 6px;
+
+    padding: .5rem 1rem;
+
+}
+
+button:hover {
+
+    background: var(--fantasy-red-light);
+
+}
+
+/* ---------------------------------------
+   Subtle Page Animation
+--------------------------------------- */
+
+article {
+
+    animation: fadeIn .4s ease;
+
+}
+
+@keyframes fadeIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(10px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}

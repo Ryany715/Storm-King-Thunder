@@ -32,7 +32,7 @@ If the players elect to travel northwards they will hit the Bandits encounter:
 ![[Bandit captain.png]]
 
 
-# # Central Route North
+#  Central Route North
 
 1. Beliard
 2. Longsaddle -> Xanthral's Keep
